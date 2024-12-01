@@ -4,7 +4,7 @@
     <%= link_to post_path(post.id) do %>
       <%= image_tag post.get_image %>
     <% end %>
-    <p>投稿画像:<%= image_tag 'sample-author1.jpg' %></p>
+    <p>投稿画像:<%= image_rag post.user.get_profile_image(100,100 %></p>
     <p>タイトル:<%= post.title %></p>
     <p>本文：<%= post.body %></p>
     <p>ユーザーネーム:<%= post.user.name %></p>
