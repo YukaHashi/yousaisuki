@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   get '/homes/about' => "homes#about"
   get '/users/mypage' => "users#mypage"
   
-  resources :posts, only: [:new, :create, :index, :show, :edit, :destroy]
+  resources :posts, only: [:new, :create, :index, :show, :edit, :update, :destroy]
   resources :users, only: [:show, :edit, :update]
   
 end
