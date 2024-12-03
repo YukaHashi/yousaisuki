@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+  # 新規投稿
   def new
     # viewに渡すための空のmodelを作成
     @post = Post.new
@@ -33,9 +34,17 @@ class PostsController < ApplicationController
   end
   
   def update
-    post = Post.find(params[:id])
-    post.update(post_params)
-    redirect_to post_path(post.id)
+    # データを受け取り、更新する
+    @post = Post.find(params[:id])
+    # データを更新する
+    if @post.update(post_params)
+      flash[:notice] = "保存に成功しました"
+      redirect_to post_path(@post.id)
+    else
+      # フラッシュメッセージを定義し、edit.html.erbに描画する
+      flash.now[:notice] = "保存に失敗しました"
+      render :edit
+    end
   end
   
   def destroy
