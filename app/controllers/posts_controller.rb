@@ -41,15 +41,18 @@ class PostsController < ApplicationController
       flash[:notice] = "保存に成功しました"
       redirect_to post_path(@post.id)
     else
-      # フラッシュメッセージを定義し、edit.html.erbに描画する
+      # フラッシュメッセージを定義し、投稿編集edit.html.erbに遷移する
       flash.now[:notice] = "保存に失敗しました"
       render :edit
     end
   end
   
   def destroy
+    # データを1件取得する
     @post = Post.find(params[:id])
+    # データを削除する
     @post.destroy
+    # 投稿一覧show.html.erbへ遷移する
     redirect_to posts_path
   end
   
