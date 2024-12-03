@@ -34,6 +34,9 @@ class DeviseCreateUsers < ActiveRecord::Migration[6.1]
       
       ## 名前を保存するカラム
       t.string :name
+      
+      ## 退会管理用のカラム
+      t.boolean "is_deleted", default: false, null: false
 
 
       t.timestamps null: false
