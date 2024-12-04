@@ -6,5 +6,6 @@
   <% if @user == current_user %>
   <p><%= link_to "投稿一覧", user_path(@user.id) %></p>
   <p><%= link_to "プロフィール編集", edit_user_path(@user.id) %></p>
+  <p><%= link_to "退会する", users_check_path(@user.id) %></p>
   <% end %>
 </div>
