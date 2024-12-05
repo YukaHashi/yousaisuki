@@ -29,11 +29,7 @@ class UsersController < ApplicationController
     redirect_to root_path
   end
   
-  # is_deletedがfalseならtrueを返すように
-  def active_for_authentication?
-    super && (is_deleted == false)
-  end
-  
+
   private
   
   def user_params
