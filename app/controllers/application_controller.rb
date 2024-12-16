@@ -1,4 +1,5 @@
 class ApplicationController < ActionController::Base
+  # ログイン認証が済んでいない状態でトップページ以外にアクセスしても、ログイン画面へリダイレクトする
   before_action :authenticate_user!, except: [:top]
   # devise利用の機能（ユーザ登録、ログイン認証など）が使われる前にメソッド実行
   before_action :configure_permitted_parameters, if: :devise_controller?
@@ -10,7 +11,7 @@ class ApplicationController < ActionController::Base
   
   # サインアウト後の遷移先を設定
   def after_sign_out_path_for(resource)
-    homes_about_path
+    root_path
   end
   
   protected

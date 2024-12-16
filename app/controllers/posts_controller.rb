@@ -1,4 +1,6 @@
 class PostsController < ApplicationController
+  before_action :is_matching_login_user, only: [:edit, :update]
+
   # 新規投稿
   def new
     # viewに渡すための空のmodelを作成
@@ -59,4 +61,13 @@ class PostsController < ApplicationController
   def post_params
     params.require(:post).permit(:image, :title, :body)
   end
+  
+   # 現在ログインしているユーザーのデータを取得し、一致していない場合は投稿一覧にリダイレクトする
+  def is_matching_login_user
+    user = User.find(params[:id])
+    unless user.id == current_user.id
+      redirect_to post_path
+    end
+  end
+  
 end

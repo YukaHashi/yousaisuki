@@ -9,6 +9,10 @@
     <% end %>
     </p>
     <p>ユーザー画像:<%= image_tag post.user.get_profile_image(100,100) %></p>
-    <p>ユーザーネーム:<%= post.user.name %></p>
+    <p>ユーザーネーム:
+    <%= link_to users_mypage_path do %>
+      <%= post.user.name %>
+    <% end %>
+    </p>
   </div>
 <% end %>

@@ -11,6 +11,9 @@
 
 <%= form_with model: @post, url: post_path(@post.id), method: :patch do |f| %>
 
+  <h4>画像</h4>
+  <%= f.file_field :image %>
+  
   <h4>タイトル</h4>
   <%= f.text_field :title %>
   

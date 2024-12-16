@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  before_action :is_matching_login_user, only: [:edit, :update]
+  
   def mypage
     @user = current_user
   end
@@ -13,9 +15,17 @@ class UsersController < ApplicationController
   end
   
   def update
+    # データを受け取り、更新する
     @user = User.find(params[:id])
-    @user.update(user_params)
-    redirect_to user_path(@user.id)
+    # データを更新する
+    if @user.update(user_params)
+      flash[:notice] = "保存に成功しました"
+      redirect_to user_path(@user.id)
+    else
+      # フラッシュメッセージを定義し、ユーザー編集edit.html.erbに遷移する
+      flash.now[:notice] = "保存に失敗しました"
+      render :edit
+    end
   end
   
   def withdraw
@@ -33,6 +43,15 @@ class UsersController < ApplicationController
   private
   
   def user_params
-    params.require(:user).permit(:name, :profile_image)
+    params.require(:user).permit(:name, :email, :profile_image)
   end
+  
+  # 現在ログインしているユーザーのデータを取得し、一致していない場合は投稿一覧にリダイレクトする
+  def is_matching_login_user
+    user = User.find(params[:id])
+    unless user.id == current_user.id
+      redirect_to post_path
+    end
+  end
+
 end
