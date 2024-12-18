@@ -24,6 +24,8 @@
   
   <%= f.submit "更新" %><br>
   
-  <p><%= link_to "退会する", users_check_path(@user.id) %></p>
+  <% if @user.id == current_user %>
+    <%= link_to "退会する", users_check_path(@user.id) %>
+  <% end %>
   
 <% end %>

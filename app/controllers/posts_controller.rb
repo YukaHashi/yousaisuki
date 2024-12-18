@@ -66,6 +66,7 @@ class PostsController < ApplicationController
   def is_matching_login_user
     user = User.find(params[:id])
     unless user.id == current_user.id
+      flash[:alert] = "他のユーザーの投稿情報にアクセスする権限がありません"
       redirect_to post_path
     end
   end

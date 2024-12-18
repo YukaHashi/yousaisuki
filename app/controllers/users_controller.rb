@@ -46,11 +46,12 @@ class UsersController < ApplicationController
     params.require(:user).permit(:name, :email, :profile_image)
   end
   
-  # 現在ログインしているユーザーのデータを取得し、一致していない場合は投稿一覧にリダイレクトする
+  # 現在ログインしているユーザーのデータを取得し、一致していない場合はマイページにリダイレクトする
   def is_matching_login_user
     user = User.find(params[:id])
     unless user.id == current_user.id
-      redirect_to post_path
+      flash[:alert] = "他のユーザーの情報にアクセスする権限がありません"
+      redirect_to users_mypage_path
     end
   end
 
