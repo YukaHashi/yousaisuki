@@ -6,7 +6,9 @@ class UsersController < ApplicationController
   end
 
   def edit
-    @user = User.find(params[:id])
+    @user = current_user
+    puts "current_user id: #{current_user.id}"
+    puts "@user id: #{@user.id}"
   end
 
   def show
