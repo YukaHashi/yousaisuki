@@ -66,3 +66,6 @@ gem "net-pop"
 gem "net-imap"
 
 end
+
+gem 'executable-hooks', '>= 1.6.1'
+
