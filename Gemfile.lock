@@ -92,7 +92,6 @@ GEM
       dotenv (= 3.1.4)
       railties (>= 6.1)
     erubi (1.13.0)
-    executable-hooks (1.7.1)
     ffi (1.17.0)
     globalid (1.2.1)
       activesupport (>= 6.1)
@@ -255,7 +254,6 @@ DEPENDENCIES
   capybara (>= 3.26)
   devise
   dotenv-rails
-  executable-hooks (>= 1.6.1)
   image_processing (~> 1.2)
   jbuilder (~> 2.7)
   listen (~> 3.3)
