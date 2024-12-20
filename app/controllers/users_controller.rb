@@ -7,8 +7,6 @@ class UsersController < ApplicationController
 
   def edit
     @user = current_user
-    puts "current_user id: #{current_user.id}"
-    puts "@user id: #{@user.id}"
   end
 
   def show
