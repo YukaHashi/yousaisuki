@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   patch '/users/withdraw' => "users#withdraw"
   
   get "search" => "searches#search"
-  
+
   resources :posts, only: [:new, :create, :index, :show, :edit, :update, :destroy]
   resources :users, only: [:show, :edit, :update]
   
