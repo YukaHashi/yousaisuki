@@ -8,6 +8,9 @@ class User < ApplicationRecord
   
   has_one_attached :profile_image
   
+  # 複数のPostCommentモデルと関連付け、Userが削除されたとき関連するコメントを削除する。
+  has_many :post_comments, dependent: :destroy
+  
   # バリテーションの設定
   validates :name, presence: true
   validates :email, presence: true
@@ -39,4 +42,5 @@ class User < ApplicationRecord
       @user = User.all
     end
   end
+
 end
