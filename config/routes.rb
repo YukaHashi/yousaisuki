@@ -10,6 +10,8 @@ Rails.application.routes.draw do
   # 退会処理（論理削除）
   patch '/users/withdraw' => "users#withdraw"
   
+  get "search" => "searches#search"
+
   resources :posts, only: [:new, :create, :index, :show, :edit, :update, :destroy] do
     resources :post_comments, only: [:create, :destroy]
   end
