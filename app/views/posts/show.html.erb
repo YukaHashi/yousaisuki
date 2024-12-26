@@ -6,10 +6,15 @@
     <p>本文：<%= @post.body %></p>
     <p>ユーザーネーム:<%= @post.user.name %></p>
     <p>投稿画像:<%= image_tag @post.user.get_profile_image(100,100) %></p>
+    <p>コメント数:<%= @post.post_comments.count %></p>
     <p>投稿日:<%= @post.created_at.strftime('%Y/%m/%d') %></p>
     
     <% if @post.user == current_user %>
       <%= link_to "編集", edit_post_path(@post.id) %>
       <%= link_to "削除", post_path(@post), method: :delete, "data-confirm" => "本当に削除しますか？" %>
     <% end %>
+    
+    <%= render "post_comments/index", post: @post %>
+    <%= render "post_comments/form", post: @post, post_comment: @post_comment %>
+    
   </div>

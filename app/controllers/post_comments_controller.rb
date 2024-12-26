@@ -11,13 +11,13 @@ class PostCommentsController < ApplicationController
   end
   
   # コメントを削除
-  def destory
+  def destroy
     comment = PostComment.find(params[:id])
     comment.destroy
-    redirect_to request.refere
+    redirect_to request.referer
   end
   
-  praivate
+  private
   
   def post_comment_params
     params.require(:post_comment).permit(:comment)

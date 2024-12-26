@@ -8,6 +8,7 @@
       <%= image_tag post.get_image %>
     <% end %>
     </p>
+    <p>コメント数:<%= post.post_comments.count %></p>
     <p>ユーザー画像:<%= image_tag post.user.get_profile_image(100,100) %></p>
     <p>ユーザーネーム:
     <%= link_to users_mypage_path do %>
