@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
 
-  devise_for :admins
+  # 不要となるルーティング(管理者の新規登録とパスワード機能)を無効にする
+  devise_for :admin, skip: [:registrations, :password], controllers: {
+    sessions: 'admin/sessions'
+  }
+  
   devise_for :users
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   root to: "homes#top"
