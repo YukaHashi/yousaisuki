@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class Admin::SessionsController < ApplicationController
+class Admin::SessionsController < Devise::SessionsController
   layout 'admin'
   
   protected

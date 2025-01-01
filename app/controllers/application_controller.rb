@@ -17,7 +17,7 @@ class ApplicationController < ActionController::Base
   private
   
   def admin_controller?
-    safe.class.module_parent_name == 'Admin'
+    self.class.module_parent_name == 'Admin'
   end
   
   protected
