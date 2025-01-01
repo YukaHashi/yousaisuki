@@ -3,4 +3,7 @@ class Admin < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+
+  # emailを使用し、ログイン
+  devise authentication_keys: [:email]
 end

@@ -1,4 +1,4 @@
-class PostCommentsController < ApplicationController
+class Public::PostCommentsController < ApplicationController
   
   # 新しいコメントを作成
   def create
