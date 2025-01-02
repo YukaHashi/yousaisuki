@@ -24,11 +24,12 @@ class Public::PostsController < ApplicationController
   end
 
   def index
-    @posts = Post.all
+    @posts = Post.page(params[:page])
   end
 
   def show
     @post = Post.find(params[:id])
+    @posts = Post.all
     @post_comment = PostComment.new
   end
 

@@ -1,19 +1,4 @@
 <h1>Posts#index</h1>
-<% @posts.each do |post| %>
-  <div>
-    <p>タイトル:<%= post.title %></p>
-    <p>本文：<%= post.body %></p>
-    <p>投稿詳細:
-    <%= link_to post_path(post.id) do %>
-      <%= image_tag post.get_image %>
-    <% end %>
-    </p>
-    <p>コメント数:<%= post.post_comments.count %></p>
-    <p>ユーザー画像:<%= image_tag post.user.get_profile_image(100,100) %></p>
-    <p>ユーザーネーム:
-    <%= link_to users_mypage_path do %>
-      <%= post.user.name %>
-    <% end %>
-    </p>
-  </div>
-<% end %>
+
+<%= render 'list', posts: @posts %>
+<%= paginate @posts %>

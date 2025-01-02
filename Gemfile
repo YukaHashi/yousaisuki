@@ -67,5 +67,8 @@ gem "net-imap"
 
 end
 
+
+gem 'kaminari','~> 1.2.1'
+
 #gem 'executable-hooks', '>= 1.6.1'
 
