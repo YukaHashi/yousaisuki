@@ -22,35 +22,38 @@
 
   <body class="d-flex flex-column vh-100">
     <header class="shadow-sm">
-      <nav class="navbar navbar-expand-lg navbar-light">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
+          <div class="col-md-3">
+            <a class="navbar-brand" href="/homes/about">Yousaisuki</a>
+          </div>
           <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav ml-auto">
               <% if user_signed_in? %>
                 <li>
-                  <%= link_to "About", homes_about_path, class: 'nav-link text-dark' %>
+                  <%= link_to "About", homes_about_path, class: 'nav-link text-light' %>
                 </li>
                 <li>
-                  <%= link_to "投稿一覧", posts_path, class: 'nav-link text-dark' %>
+                  <%= link_to "投稿一覧", posts_path, class: 'nav-link text-light' %>
                 </li>
                 <li>
-                  <%= link_to "新規投稿", new_post_path, class: 'nav-link text-dark' %>
+                  <%= link_to "新規投稿", new_post_path, class: 'nav-link text-light' %>
                 </li>
                 <li>
-                  <%= link_to "マイページ", users_mypage_path, class: 'nav-link text-dark' %>
+                  <%= link_to "マイページ", users_mypage_path, class: 'nav-link text-light' %>
                 </li>
                 <li>
-                  <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'nav-link text-dark' %>
+                  <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'nav-link text-light' %>
                 </li>
               <% else %>
                 <li>
-                  <%= link_to "新規登録", new_user_registration_path, class: 'nav-link text-dark' %>
+                  <%= link_to "新規登録", new_user_registration_path, class: 'nav-link text-light' %>
                 </li>
                 <li>
-                  <%= link_to "ログイン", new_user_session_path, class: 'nav-link text-dark' %>
+                  <%= link_to "ログイン", new_user_session_path, class: 'nav-link text-light' %>
                 </li>
               <% end %>
             </ul>
@@ -58,7 +61,7 @@
         </div>
       </nav>
     </header>
-    <main class="mb-auto">
+    <main class="mb-auto m-5">
       <%= render 'public/searches/form' %>
       <% flash.each do |message_type, message| %>
         <div class="flash-message <%= message_type %>"><%= message %></div>
@@ -70,8 +73,9 @@
       <div class="container">
         <div class="row no-gutters">
           <div class="col-md-4">
-            <p>洋裁に興味のある人が、自分で作ったものを紹介したり、<br>
-               情報交換をしたりできるコミュニティサイト</p>
+            <p>洋裁に興味のある人が、自分で作った<br>
+               ものを紹介したり、情報交換をする<br>
+               コミュニティサイト</p>
           </div>
           <div class="col-md-8">
             <h6 class="text-white mt-2 mb-3">Link</h6>

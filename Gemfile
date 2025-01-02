@@ -60,15 +60,13 @@ gem 'devise'
 gem 'dotenv-rails'
 group :production do
   gem 'mysql2'
-
-gem "net-smtp"
-gem "net-pop"
-gem "net-imap"
-
+  gem "net-smtp"
+  gem "net-pop"
+  gem "net-imap"
 end
 
-
 gem 'kaminari','~> 1.2.1'
+gem 'bootstrap4-kaminari-views'
 
 #gem 'executable-hooks', '>= 1.6.1'
 
