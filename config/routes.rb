@@ -31,4 +31,7 @@ Rails.application.routes.draw do
   
   end
   
+  # /favicon.icoへのリクエストを無視する
+  get '/favicon.ico', to: ->(env) { [404, {}, []] }
+  
 end
