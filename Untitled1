@@ -21,6 +21,7 @@ git push origin ___  # 作成した作業ブランチをリモートリポジト
 git push origin ___
 # GitHubでpull request -> new pullrequest -> ブランチの選択しcreate pull request -> プルリクの確認 -> merge pull request
 
+
 git checkout ___
 git branch
 git pull origin ___  # リモートブランチの最新バージョンをpull
