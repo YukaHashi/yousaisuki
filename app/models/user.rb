@@ -11,6 +11,9 @@ class User < ApplicationRecord
   # 複数のPostCommentモデルと関連付け、Userが削除されたとき関連するコメントを削除する。
   has_many :post_comments, dependent: :destroy
   
+  has_many :group_users, dependent: :destroy
+  has_many :groups, through:  :group_users
+  
   # バリテーションの設定
   validates :name, presence: true
   validates :email, presence: true
