@@ -22,7 +22,7 @@ Rails.application.routes.draw do
     get '/users/check' => "users#check"
     # 退会処理（論理削除）
     patch '/users/withdraw' => "users#withdraw"
-    
+    # 検索機能
     get "search" => "searches#search"
   
     resources :posts, only: [:new, :create, :index, :show, :edit, :update, :destroy] do
@@ -30,6 +30,9 @@ Rails.application.routes.draw do
     end
     
     resources :users, only: [:show, :edit, :update]
+    
+    # 投稿一覧および投稿削除画面
+    resources :post_comments, only: [:index, :destroy]
   
   end
   
