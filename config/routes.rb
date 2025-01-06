@@ -22,13 +22,11 @@ Rails.application.routes.draw do
     get '/users/check' => "users#check"
     # 退会処理（論理削除）
     patch '/users/withdraw' => "users#withdraw"
-    # 検索機能
+    
     get "search" => "searches#search"
   
     resources :posts, only: [:new, :create, :index, :show, :edit, :update, :destroy] do
       resources :post_comments, only: [:create, :destroy]
-    # except destroyアクション以外のルーティングを作成
-    resources :groups, except: [:destroy]
     end
     
     resources :users, only: [:show, :edit, :update]
