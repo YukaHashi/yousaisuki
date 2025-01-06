@@ -1,0 +1,48 @@
+
+
+git add .
+git commit -m "___"  # コミットメッセージ
+git push origin ___  # ブランチ名
+
+-----------
+
+git status  # ステータスの確認
+git diff  # 変更箇所の確認
+
+-----------
+
+git branch  # 現在のブランチの確認
+git checkout -b feature/___  # 作業ブランチを作成
+git branch  # 作業ブランチに移動していることを確認
+git commit --allow-empty -m "first commit"  #空コミット
+git push origin ___  # 作成した作業ブランチをリモートリポジトリにpushする
+
+
+git push origin ___
+# GitHubでpull request -> new pullrequest -> ブランチの選択しcreate pull request -> プルリクの確認 -> merge pull request
+
+git checkout ___
+git branch
+git pull origin ___  # リモートブランチの最新バージョンをpull
+git checkout ___  # 自分の作業ブランチに移動
+git merge ___  # 動作を確認し自分のブランチにも反映させる
+git push origin ___  # リモートの自分のブランチにも反映させる
+
+-----------
+
+
+ssh -i ~/.ssh/practice-aws.pem ec2-user@18.183.121.21
+
+
+cd yousaisuki
+kill $(cat tmp/pids/puma.pid)
+bundle install --path vendor/bundle --without test development
+bundle exec rails assets:precompile RAILS_ENV=production
+bundle exec rails db:migrate RAILS_ENV=production
+rails s -e production
+
+
+sudo tail -f yousaisuki/log/production.log  # Rails側のエラーログの確認
+
+
+sudo tail -f /var/log/nginx/error.log  # Nginxのエラーログの確認
