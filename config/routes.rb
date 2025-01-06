@@ -8,6 +8,8 @@ Rails.application.routes.draw do
   namespace :admin do
     get 'dashboards', to: 'dashboards#index'
     resources :users, only: [:destroy]
+    # 投稿一覧および投稿削除画面
+    resources :post_comments, only: [:index, :destroy]
   end
   
   scope module: :public do

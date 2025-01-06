@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
   # 現在のコントローラーが管理者用かどうかに基づきメソッドを呼び出す
   def configure_authentication
     if admin_controller?
-      autenticate_admin!
+      authenticate_admin!
     else
       authenticate_user! unless action_is_public?
     end
