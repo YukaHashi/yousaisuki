@@ -69,4 +69,3 @@ gem 'kaminari','~> 1.2.1'
 gem 'bootstrap4-kaminari-views'
 
 #gem 'executable-hooks', '>= 1.6.1'
-
