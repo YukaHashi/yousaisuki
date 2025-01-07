@@ -33,6 +33,9 @@ Rails.application.routes.draw do
     
     # 投稿一覧および投稿削除画面
     resources :post_comments, only: [:index, :destroy]
+    
+    # except destroyアクション以外のルーティングを生成
+    resources :groups, except: [:destroy]
   
   end
   

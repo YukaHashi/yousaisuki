@@ -31,6 +31,7 @@ git push origin ___  # リモートの自分のブランチにも反映させる
 
 -----------
 
+# デプロイ手順
 
 ssh -i ~/.ssh/practice-aws.pem ec2-user@13.231.176.80
 
