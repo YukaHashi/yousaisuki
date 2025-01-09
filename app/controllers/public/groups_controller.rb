@@ -5,11 +5,13 @@ class Public::GroupsController < ApplicationController
   def index
     @post = Post.new
     @groups = Group.all
+    @user = User.find(current_user.id)
   end
   
   def show
     @post = Post.new
     @group = Group.find(params[:id])
+    @user = User.find(params[:id])
   end
   
   def new
@@ -17,7 +19,7 @@ class Public::GroupsController < ApplicationController
   end
   
   def create
-    @group = Group.new
+    @group = Group.new(group_params)
     #グループ作成者が誰かを判断する
     @group.owner_id = current_user.id
     if @group.save
