@@ -48,3 +48,6 @@ sudo tail -f yousaisuki/log/production.log  # Rails側のエラーログの確�
 
 
 sudo tail -f /var/log/nginx/error.log  # Nginxのエラーログの確認
+
+
+sudo tail -f log/production.log 

@@ -18,7 +18,7 @@
             <%= image_tag 'no_image', size: "50x50" %>
           <% end %>
         </td>
-        <td><%= link_to group.name,group_path(group) %></td>
+        <td><%= link_to group.name, group_path(group) %></td>
         <td><%= group.introduction %></td>
         
         <% if group.owner_id == current_user.id %>
