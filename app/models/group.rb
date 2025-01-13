@@ -10,9 +10,5 @@ class Group < ApplicationRecord
   def is_owned_by?(user)
     owner.id == user.id
   end
-  
-  # imageを呼び出したときに中身が空の場合、assets/images/no_image.jpgを呼び出す
-  def get_image
-    (image.attached?)? image : 'no_image.jpg'
-  end
+
 end
