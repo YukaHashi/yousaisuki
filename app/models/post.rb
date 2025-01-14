@@ -2,7 +2,7 @@ class Post < ApplicationRecord
   has_one_attached :image
   belongs_to :user
   
-  # 複数のPostCommentモデルと関連付け、Postが削除されたとき関連するコメントを削除する。
+  # 複数のPostCommentモデルと関連付け、Postが削除されたとき関連するコメントを削除する
   has_many :post_comments, dependent: :destroy
   
   # バリテーションの設定
