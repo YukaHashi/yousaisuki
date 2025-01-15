@@ -33,7 +33,7 @@ git push origin ___  # リモートの自分のブランチにも反映させる
 
 # デプロイ手順
 
-ssh -i ~/.ssh/practice-aws.pem ec2-user@52.194.239.37
+ssh -i ~/.ssh/practice-aws.pem ec2-user@18.181.206.105
 
 
 cd yousaisuki
@@ -50,4 +50,11 @@ sudo tail -f yousaisuki/log/production.log  # Rails側のエラーログの確�
 sudo tail -f /var/log/nginx/error.log  # Nginxのエラーログの確認
 
 
-sudo tail -f log/production.log 
+sudo tail -f log/production.log
+
+
+# IPアドレスが古いのが読み込まれていた際の対処方法
+
+
+sudo vi /etc/nginx/conf.d/yousaisuki.conf
+sudo systemctl restart nginx
