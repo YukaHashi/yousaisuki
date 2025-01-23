@@ -55,6 +55,5 @@ sudo tail -f log/production.log
 
 # IPアドレスが古いのが読み込まれていた際の対処方法
 
-
 sudo vi /etc/nginx/conf.d/yousaisuki.conf
 sudo systemctl restart nginx

@@ -43,6 +43,9 @@
                   <%= link_to "新規投稿", new_post_path, class: 'nav-link text-light' %>
                 </li>
                 <li>
+                  <%= link_to "グループ",groups_path, class: 'nav-link text-light' %>
+                </li>
+                <li>
                   <%= link_to "マイページ", users_mypage_path, class: 'nav-link text-light' %>
                 </li>
                 <li>
@@ -82,21 +85,8 @@
     <footer class="bg-dark text-white pt-5 pb-4">
       <div class="container">
         <div class="row no-gutters">
-          <div class="col-md-4">
-            <p>洋裁に興味のある人が、自分で作った<br>
-               ものを紹介したり、情報交換をする<br>
-               コミュニティサイト</p>
-          </div>
-          <div class="col-md-8">
-            <h6 class="text-white mt-2 mb-3">Link</h6>
-            <ul class="p-0 list-unstyled">
-              <li>
-                <a href="" title="About" class="text-white-50">サイト概要</a>
-              </li>
-              <li>
-                <a href="" title="License informations" class="text-white-50">プライバシーポリシー</a>
-              </li>
-            </ul>
+          <div class="col-md-12">
+            <p>洋裁に興味のある人が、自分で作ったものを紹介したり、情報交換をするコミュニティサイト</p>
           </div>
         </div>
       </div>
