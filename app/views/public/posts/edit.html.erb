@@ -1,25 +1,22 @@
-<h1>Posts#edit</h1>
-
-<% if @post.errors.any? %>
-  <%= @post.errors.count %>件のエラーが発生しました
-  <ul>
-    <% @post.errors.full_messages.each do |message| %>
-      <li><%= message %></li>
+<div class="container">
+  <h3>投稿編集</h3>
+    <% if @post.errors.any? %>
+      <%= @post.errors.count %>件のエラーが発生しました
+      <ul>
+        <% @post.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
     <% end %>
-  </ul>
-<% end %>
-
-<%= form_with model: @post, url: post_path(@post.id), method: :patch do |f| %>
-
-  <h4>画像</h4>
-  <%= f.file_field :image %>
-  
-  <h4>タイトル</h4>
-  <%= f.text_field :title %>
-  
-  <h4>本文</h4>
-  <%= f.text_area :body %>
-  
-  <%= f.submit '保存' %>
-
-<% end %>
+  <div class="container mt-5 my-3 ml-3 mr-3">
+    <%= form_with model: @post, url: post_path(@post.id), method: :patch do |f| %>
+      <p>画像<br>
+         <%= f.file_field :image %></p>
+      <p>タイトル<br>
+         <%= f.text_field :title %></p>
+      <p>本文<br>
+         <%= f.text_area :body %></p>
+      <%= f.submit '保存', class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>

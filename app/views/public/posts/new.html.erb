@@ -1,25 +1,23 @@
-<h1>Posts#new</h1>
-
-<% if @post.errors.any? %>
-  <%= @post.errors.count %>件のエラーが発生しました
-  <ul>
-    <% @post.errors.full_messages.each do |message| %>
-      <li><%= message %></li>
+<div class="container">
+  <h3>新規投稿</h3>
+    <% if @post.errors.any? %>
+      <%= @post.errors.count %>件のエラーが発生しました
+      <ul>
+        <% @post.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
     <% end %>
-  </ul>
-<% end %>
-
-<%= form_with model: @post do |f| %>
-
-  <h4>画像</h4>
-  <%= f.file_field :image, accept: "image/*" %>
-  
-  <h4>タイトル</h4>
-  <%= f.text_area :title %>
-  
-  <h4>本文</h4>
-  <%= f.text_area :body %>
-  
-  <%= f.submit '投稿' %>
-
-<% end %>
+  <div class="container mt-5 my-3 ml-3 mr-3">
+    <%= form_with model: @post do |f| %>
+      <p>画像<br>
+        <%= f.file_field :image, accept: "image/*" %></p>
+      <p>タイトル<br>
+        <%= f.text_area :title %></p>
+      <p>本文<br>
+        <%= f.text_area :body %>
+      </p>
+      <%= f.submit '投稿', class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>
