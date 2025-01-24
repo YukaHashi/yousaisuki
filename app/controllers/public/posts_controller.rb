@@ -24,7 +24,8 @@ class Public::PostsController < ApplicationController
   end
 
   def index
-    @posts = Post.page(params[:page])
+    # ページネーション
+    @posts = Post.page(params[:page]).per(10)
   end
 
   def show
