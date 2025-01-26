@@ -1,10 +1,12 @@
-<h1>本当に退会しますか？</h1>
-
-<P>
-  退会すると、会員登録情報や<br>
-  これまでの投稿履歴が閲覧できなくなります。<br>
-  退会する場合は、「退会する」をクリックしてください。
-</P>
-
-<%= link_to "退会しない", users_mypage_path, :class => "btn btn-primary ms-30" %>
-<%= link_to "退会する",users_withdraw_path, method: :patch, :class => "btn btn-danger ms-3", data: { confirm: "本当に退会しますか？" } %>
+<div class="container mt-3">
+  <h3>本当に退会しますか？</h3>
+  <P>
+    退会すると、会員登録情報や<br>
+    これまでの投稿履歴が閲覧できなくなります。<br>
+    退会する場合は、「退会する」をクリックしてください。
+  </P>
+  <div>
+    <%= link_to "退会しない", users_mypage_path, :class => "btn btn-primary ms-30" %>
+    <%= link_to "退会する",users_withdraw_path, method: :patch, :class => "btn btn-danger ms-3", data: { confirm: "本当に退会しますか？" } %>
+  </div>
+</div>

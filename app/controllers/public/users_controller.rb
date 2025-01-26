@@ -11,8 +11,9 @@ class Public::UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @post = @user.posts.page(params[:page])
-    @posts = Post.page(params[:page])
+    #ページネーション
+    @post = @user.posts.page(params[:page]).per(10)
+    @posts = Post.page(params[:page]).per(10)
   end
   
   def update
