@@ -51,15 +51,6 @@
                 <li>
                   <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'nav-link text-light' %>
                 </li>
-                
-              <% elsif admin_signed_in? %>
-                <li>
-                  <%= link_to '投稿一覧', admin_post_comments_path, class: 'nav-link text-light' %>
-                </li>
-                <li>
-                  <%= link_to 'ログアウト', destroy_admin_session_path, method: :delete, class: 'nav-link text-light' %>
-                </li>
-
               <% else %>
                 <li>
                   <%= link_to "新規登録", new_user_registration_path, class: 'nav-link text-light' %>
@@ -68,7 +59,6 @@
                   <%= link_to "ログイン", new_user_session_path, class: 'nav-link text-light' %>
                 </li>
               <% end %>
-
             </ul>
           </div>
         </div>
@@ -89,6 +79,7 @@
         <div class="row no-gutters">
           <div class="col-md-12 text-center">
             <p>洋裁に興味のある人が、自分で作ったものを紹介したり、情報交換をするコミュニティサイト</p>
+            <%= link_to "管理者", admin_session_path, class: 'nav-link text-light' %>
           </div>
         </div>
       </div>
