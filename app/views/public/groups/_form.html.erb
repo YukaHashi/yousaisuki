@@ -7,7 +7,7 @@
   </ul>
 <% end %>
 <div class="container mt-5 my-3 ml-3 mr-3">
-  <%= form_with model: @group, url: group_path(@group.id) do |f| %>
+  <%= form_with model: @group, url: @group.new_record? ? groups_path : group_path(@group) do |f| %>
     <div class="form-group">
       <%= f.label :グループ名 %>
       <%= f.text_field :name, class: 'form-control' %>
