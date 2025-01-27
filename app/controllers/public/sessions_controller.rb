@@ -8,12 +8,12 @@ class Public::SessionsController < Devise::SessionsController
 
   # サインイン後の遷移先を設定
   def after_sign_in_path_for(resource)
-    users_mypage_path
+    homes_about_path
   end
   
   # サインアウト後の遷移先を設定
   def after_sign_out_path_for(resource)
-    homes_about_path
+    root_path
   end
   
   protected
