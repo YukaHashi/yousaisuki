@@ -5,6 +5,8 @@ class Public::GroupsController < ApplicationController
   def index
     @post = Post.new
     @groups = Group.all
+    # ページネーション
+    @groups = Group.page(params[:page]).per(5)
     @user = User.find(current_user.id)
   end
   
