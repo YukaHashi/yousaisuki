@@ -1,6 +1,6 @@
 <div class='container px-5 px-sm-0'>
   <div class='row'>
-    <div class='col-md-8 offset-md-1'>
+    <div class='col-md-10 offset-md-1'>
       <h2>グループ詳細</h2>
       <table class='table table-hover table-inverse'>
         <thead>
@@ -16,9 +16,9 @@
           <tr>
             <td>
               <% if @group.group_image.attached? %>
-                <%= image_tag @group.group_image,size:"50x50" %>
+                <%= image_tag @group.group_image,size:"80x80", class: "rounded-circle content-center" %>
               <% else %>
-                <%= image_tag 'no_image', size: "50x50" %>
+                <%= image_tag 'no_image', size: "80x80", class: "rounded-circle content-center" %>
               <% end %>
             </td>
             <td><%= @group.name %></td>
