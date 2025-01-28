@@ -36,10 +36,10 @@
                   <%= link_to "ユーザー一覧", admin_dashboards_path, class: 'nav-link text-light' %>
                 </li>
                 <li>
-                  <%= link_to "投稿一覧", homes_about_path, class: 'nav-link text-light' %>
+                  <%= link_to "投稿一覧", admin_posts_path, class: 'nav-link text-light' %>
                 </li>
                 <li>
-                  <%= link_to "コメント一覧", admin_post_comments_path, class: 'nav-link text-light' %>
+                  <%= link_to "コメント一覧", admin_post_post_comments_path(post_id:1), class: 'nav-link text-light' %>
                 </li>
                 <li>
                   <%= link_to 'ログアウト', destroy_admin_session_path, method: :delete, class: 'nav-link text-light' %>
@@ -60,7 +60,11 @@
         <div class="container">
           <div class="row no-gutters">
             <div class="col-md-12 text-center">
+              <p>洋裁に興味のある人が、自分で作ったものを紹介したり、情報交換をするコミュニティサイト</p>
+              <%= link_to "参加者", user_session_path, class: 'nav-link text-light' %>
+              <%= link_to "管理者", admin_session_path, class: 'nav-link text-light' %>
             </div>
+          </div>
           </div>
         </div>
       </footer>

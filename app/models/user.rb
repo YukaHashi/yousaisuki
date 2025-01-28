@@ -3,7 +3,8 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-
+  
+  # 複数のPostモデルと関連付け、Userが削除されたとき関連する投稿を削除する。
   has_many :posts, dependent: :destroy
   
   has_one_attached :profile_image

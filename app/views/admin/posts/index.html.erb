@@ -1,0 +1,19 @@
+<div class="container mt-5">
+  <h3>投稿一覧</h3>
+    <table class="table mt-3">
+      <tr>
+        <th class="col-2">ユーザー</th>
+        <th class="col-2">タイトル</th>
+        <th class="col-5">説明</th>
+        <th class="col-1"></th>
+      </tr>
+      <% @posts.each do |post| %>
+      <tr>
+        <td class="col-2"><%= post.user.name %></td>
+        <td class="col-2"><%= post.title %></td>
+        <td class="col-5"><%= post.body %></td>
+        <td class="col-1"><%= link_to '削除', admin_post_path(post), method: :delete, data: { confirm: '本当に削除しますか?' }, class: "btn btn-sm btn-danger" %></td>
+      </tr>
+      <% end %>
+    </table>
+</div>
