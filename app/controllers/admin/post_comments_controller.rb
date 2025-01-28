@@ -13,7 +13,7 @@ class Admin::PostCommentsController < ApplicationController
     # データを削除する
     @post_comment.destroy
     # 投稿一覧へ遷移する
-    redirect_to admin_post_comments_path
+    redirect_to admin_post_post_comments_path
   end
   
 end
