@@ -12,7 +12,7 @@ class Admin::PostCommentsController < ApplicationController
     @post_comment = PostComment.find(params[:id])
     # データを削除する
     @post_comment.destroy
-    # 投稿一覧へ遷移する
+    # コメント一覧へ遷移する
     redirect_to admin_post_post_comments_path
   end
   

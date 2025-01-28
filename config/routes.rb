@@ -35,7 +35,7 @@ Rails.application.routes.draw do
     
     resources :users, only: [:show, :edit, :update]
     
-    # 投稿一覧および投稿削除画面
+    # コメント一覧および投稿削除画面
     resources :post_comments, only: [:index, :destroy]
     
     resources :groups, only: [:new, :index, :show, :create, :edit, :update] do
